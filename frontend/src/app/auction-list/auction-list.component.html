@@ -1,0 +1,20 @@
+<div class="auction-list-container">
+  <ng-container *ngFor="let watch of watches">
+    <div class="watch-card">
+      <img [src]="watch.imageUrl" alt="{{ watch.title }}" class="watch-image" />
+
+      <div class="watch-content">
+        <h2 class="watch-title">{{ watch.title }}</h2>
+        <p class="watch-price">{{ watch.price }}</p>
+        <p class="watch-timer" *ngIf="watch.timeLeft">{{ watch.timeLeft }}</p>
+
+        <a [href]="watch.url" target="_blank" class="watch-link"
+          >View on Catawiki</a
+        >
+      </div>
+    </div>
+  </ng-container>
+</div>
+<ng-container *ngIf="isLoading"
+  ><span class="loading-text"> Loading..... </span></ng-container
+>
